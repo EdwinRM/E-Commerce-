@@ -34,5 +34,6 @@
     <?php
     include "modulos/cabezal.php";
      ?>
+     <script src="vistas/js/cabezal.js"></script>
   </body>
 </html>

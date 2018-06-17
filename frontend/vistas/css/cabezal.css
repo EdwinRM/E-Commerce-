@@ -71,7 +71,6 @@ header #carrito p{
 	border:1px solid #aaa;
 	font-size:12px;
 }
-
 header #categorias{
 	display:none;
 	margin-top:-10px;
@@ -87,8 +86,6 @@ header #categorias h4{
 header #categorias hr{
 	border:1px solid rgba(255,255,255,.3);
 }
-
-
 /*=============================================
 ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 =============================================*/
