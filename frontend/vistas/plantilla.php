@@ -13,6 +13,12 @@
 
     	<title>Tienda Virtual</title><meta name="viewport" content="">
 
+<?php
+ $icono = ControladorPlantilla::ctrEstiloPlantilla();
+
+ echo '<link rel="icon" href="http://localhost/backend/'. $icono["icono"].'">';
+?>
+
       <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
 
       	<link rel="stylesheet" href="vistas/css/plugins/font-awesome.min.css">
@@ -28,6 +34,8 @@
       	<script src="vistas/js/plugins/jquery.min.js"></script>
 
       	<script src="vistas/js/plugins/bootstrap.min.js"></script>
+
+        <script src="vistas/js/plantilla.js"></script>
 
   </head>
   <body>
