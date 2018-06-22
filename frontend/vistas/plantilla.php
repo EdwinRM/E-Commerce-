@@ -14,7 +14,7 @@
     	<title>Tienda Virtual</title><meta name="viewport" content="">
 
 <?php
- $icono = ControladorPlantilla::ctrEstiloPlantilla();
+ $icono = ControladorPlantilla::ctrEstilosPlantilla();
 
  echo '<link rel="icon" href="http://localhost/backend/'. $icono["icono"].'">';
 ?>

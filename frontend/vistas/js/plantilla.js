@@ -1,6 +1,6 @@
 //plantilla
 $.ajax({
-  url:"plantilla.ajax.php",
+  url:"ajax/plantilla.ajax.php",
   success:function(respuesta){
     var colorFondo = JSON.parse(respuesta).colorFondo;// string convertido en json
     var colorTexto = JSON.parse(respuesta).colorTexto;

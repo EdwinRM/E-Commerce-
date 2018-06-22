@@ -72,7 +72,7 @@ header #carrito p{
 	font-size:12px;
 }
 header #categorias{
-	display:none;
+	 display:none; 
 	margin-top:-10px;
 	position: relative;
 	padding-bottom:20px;
