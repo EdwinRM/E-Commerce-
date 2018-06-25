@@ -17,31 +17,60 @@
  $icono = ControladorPlantilla::ctrEstilosPlantilla();
 
  echo '<link rel="icon" href="http://localhost/backend/'. $icono["icono"].'">';
+
+//mantener ruta fija del proyecto
+
+$url =Ruta :: ctrRuta();
+//var_dump($url);
 ?>
 
-      <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
+      <link rel="stylesheet" href="<?php  echo $url;?>vistas/css/plugins/bootstrap.min.css">
 
-      	<link rel="stylesheet" href="vistas/css/plugins/font-awesome.min.css">
+      	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
 
       	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
       	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
-        <link rel="stylesheet" href="vistas/css/plantilla.css">
+        <link rel="stylesheet" href="<?php  echo $url;?>vistas/css/plantilla.css">
 
-        <link rel="stylesheet" href="vistas/css/cabezal.css">
+        <link rel="stylesheet" href="<?php echo $url; ?>vistas/css/cabezal.css">
 
-      	<script src="vistas/js/plugins/jquery.min.js"></script>
+      	<script src="<?php  echo $url; ?>vistas/js/plugins/jquery.min.js"></script>
 
-      	<script src="vistas/js/plugins/bootstrap.min.js"></script>
+      	<script src="<?php  echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
 
-        <script src="vistas/js/plantilla.js"></script>
+
 
   </head>
   <body>
     <?php
     include "modulos/cabezal.php";
+
+    $rutas = array();
+    $ruta = null;
+
+    if(isset($_GET["ruta"])){
+
+      $rutas = explode("/",$_GET["ruta"]);
+
+      $item="ruta";
+      $valor= $rutas[0];
+
+      $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
+
+      if($rutas[0] == $rutaCategorias["ruta"]){
+        $ruta = $rutas[0];
+      }
+
+      if($ruta != null){
+        include "modulos/productos.php";
+      }else{
+           include "modulos/error404.php";
+      }
+    }
      ?>
+       <script src="vistas/js/plantilla.js"></script>
      <script src="vistas/js/cabezal.js"></script>
   </body>
 </html>
