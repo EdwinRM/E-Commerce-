@@ -57,11 +57,28 @@ $url =Ruta :: ctrRuta();
       $item="ruta";
       $valor= $rutas[0];
 
+      //urls amigables de categorias
+
       $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
       if($rutas[0] == $rutaCategorias["ruta"]){
         $ruta = $rutas[0];
       }
+
+// urls amigables de subacategorias
+
+      $rutaSubCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+
+foreach ($rutaSubCategorias as $key => $value) {
+
+  if($rutas[0] == $value["ruta"]){
+    $ruta = $rutas[0];
+  }
+  // code...
+}
+
+
+// lista blanca de urls amigables
 
       if($ruta != null){
         include "modulos/productos.php";

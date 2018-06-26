@@ -1,1 +1,8 @@
-<h1>Error 404 </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12-xs text-center error404">
+      <h1>404</h1>
+      <h2>Oops! pagina no encontrada</h2>
+    </div>
+  </div>
+</div>

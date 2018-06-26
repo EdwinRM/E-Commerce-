@@ -31,11 +31,11 @@ static public function mdlMostrarCategorias($tabla,$item,$valor){
 
 //Mostrar subcategorias
 
-static public function mdlMostrarSubCategorias($tabla,$id){
+static public function mdlMostrarSubCategorias($tabla,$item, $valor){
 
-  $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla where id_categoria = :id_categoria");
+  $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla where $item = :$item");
 
-  $stmt -> bindParam(":id_categoria", $id,PDO::PARAM_INT);// enlazar parametros
+  $stmt -> bindParam(":".$item, $valor,PDO::PARAM_INT);// enlazar parametros
 
   $stmt -> execute();
 
